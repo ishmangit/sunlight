@@ -1,14 +1,39 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Sunlight</ion-title>
   </ion-navbar>
+  <ion-segment color="secondary">
+    <ion-segment-button value="home">
+      <ion-icon name="home"></ion-icon> Single City
+    </ion-segment-button>
+    <ion-segment-button value="repeat">
+      <ion-icon name="repeat"></ion-icon> Compare Cities
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="fondo" padding>
+  <ion-card>
+
+    <ion-card-header>
+      <b color="primary">11/12/2018</b>
+    </ion-card-header>
+
+    <ion-card-content>
+      Contenido de la tarjeta
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <b color="primary">Sunlight Time Evolution</b>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+        [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"></canvas>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button block>Cambiar Ciudad</button>
 </ion-content>
